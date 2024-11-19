@@ -1,6 +1,8 @@
 name = "bindings"
-main = "src/index.ts"
+main = "src/index.tsx"
 compatibility_date = "2024-11-19"
+
+assets = { directory = "./public/", binding = "ASSETS" }
 
 # compatibility_flags = [ "nodejs_compat" ]
 
