@@ -1,17 +1,20 @@
 {
 	"name": "bindings",
 	"scripts": {
-		"dev": "wrangler dev",
+		"dev": "vite",
 		"deploy": "wrangler deploy --minify",
 		"lint": "biome lint",
 		"format": "biome format --write ./src"
 	},
 	"dependencies": {
-		"hono": "^4.6.10"
+		"hono": "^4.6.10",
+		"vite": "^5.4.11"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@cloudflare/workers-types": "^4.20241022.0",
+		"@hono/vite-dev-server": "^0.17.0",
 		"wrangler": "^3.83.0"
-	}
+	},
+	"type": "module"
 }

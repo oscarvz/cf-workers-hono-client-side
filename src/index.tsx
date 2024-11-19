@@ -1,19 +1,24 @@
 import { Hono } from "hono";
 import { jsxRenderer } from "hono/jsx-renderer";
 
+import { Client } from "./client";
+
 const app = new Hono();
 
 app.get(
   "/",
-  jsxRenderer(({ children }) => (
-    <html lang="en">
-      <head>
-        <title>Wow bindings</title>
-      </head>
-      <body>{children}</body>
-    </html>
-  )),
-  (c) => c.render(<h1>Hello Hono!</h1>)
+  jsxRenderer(
+    ({ children }) => (
+      <html lang="en">
+        <head>
+          <title>Wow bindings</title>
+        </head>
+        <body>{children}</body>
+      </html>
+    ),
+    { docType: true }
+  ),
+  (c) => c.render(<Client />)
 );
 
 interface Env {
