@@ -1,5 +1,5 @@
 {
-	"name": "bindings",
+	"name": "cf-workers-hono-client-side",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build --mode client && vite build",

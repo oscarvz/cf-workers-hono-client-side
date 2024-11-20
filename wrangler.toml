@@ -1,4 +1,4 @@
-name = "bindings"
+name = "cf-workers-hono-client-side"
 main = "dist/index.js"
 compatibility_date = "2024-11-19"
 
