@@ -1,7 +1,7 @@
+import build from "@hono/vite-build/cloudflare-workers";
 import devServer from "@hono/vite-dev-server";
 import cloudflareAdapter from "@hono/vite-dev-server/cloudflare";
 import { defineConfig } from "vite";
-import build from "@hono/vite-build";
 
 export default defineConfig(({ mode }) => {
 	if (mode === "client") {
@@ -14,22 +14,20 @@ export default defineConfig(({ mode }) => {
 					},
 				},
 				outDir: "./public",
-				emptyOutDir: false,
+				copyPublicDir: true,
+				emptyOutDir: true,
 				manifest: true,
 			},
+			publicDir: "./src/public",
 		};
 	}
 
 	const entry = "./src/index.tsx";
+
 	return {
-		server: {
-			port: 8787,
-		},
+		server: { port: 8787 },
 		plugins: [
-			devServer({
-				adapter: cloudflareAdapter,
-				entry,
-			}),
+			devServer({ adapter: cloudflareAdapter, entry }),
 			build({ entry }),
 		],
 	};

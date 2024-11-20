@@ -49,6 +49,8 @@ app.get(
         <html lang="en">
           <head>
             <title>Wow bindings</title>
+            <link rel="icon" href="/favicon.svg" />
+
             {assetImportTags}
           </head>
           <body>{children}</body>

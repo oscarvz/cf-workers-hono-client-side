@@ -2,8 +2,7 @@
 dist/
 
 # prod assets build
-public/assets
-public/.vite
+/public
 
 # dev
 .yarn/
