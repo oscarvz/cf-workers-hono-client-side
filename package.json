@@ -6,7 +6,7 @@
 		"preview": "vite preview",
 		"deploy": "pnpm run build && wrangler deploy --no-bundle",
 		"lint": "biome lint",
-		"format": "biome format --write ./src"
+		"format": "biome format --write"
 	},
 	"dependencies": {
 		"hono": "^4.6.10",

@@ -11,6 +11,7 @@
 	},
 	"formatter": {
 		"enabled": true,
+		"include": ["src/**/*"],
 		"indentStyle": "tab"
 	},
 	"organizeImports": {
@@ -18,6 +19,7 @@
 	},
 	"linter": {
 		"enabled": true,
+		"include": ["src/**/*"],
 		"rules": {
 			"recommended": true
 		}
