@@ -1,8 +1,17 @@
-```
-npm install
-npm run dev
-```
+# cf-workers-hono-client-side
+
+Project to demonstrate how to add client-side logic to a Hono project deployed
+on Cloudflare Workers, leveraging [assets binding](https://developers.cloudflare.com/workers/static-assets/binding).
+
+## Run locally
 
 ```
-npm run deploy
+pnpm install;
+pnpm run dev
+```
+
+## Deploy
+
+```
+pnpm run deploy
 ```
