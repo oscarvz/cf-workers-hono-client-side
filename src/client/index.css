@@ -1,5 +1,18 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 :root {
 	color-scheme: light dark;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+	width: 100%;
 }
 
 body {

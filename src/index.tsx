@@ -3,7 +3,8 @@ import type { JSX } from "hono/jsx";
 import { jsxRenderer } from "hono/jsx-renderer";
 import type { Manifest } from "vite";
 
-import Client from "./client";
+import { Counter } from "./client/Counter";
+import { Style } from "hono/css";
 
 const app = new Hono();
 
@@ -50,16 +51,19 @@ app.get(
           <head>
             <title>Wow bindings</title>
             <link rel="icon" href="/favicon.svg" />
-
+            <Style />
             {assetImportTags}
           </head>
-          <body>{children}</body>
+
+          <body>
+            <div id="root">{children}</div>
+          </body>
         </html>
       );
     },
     { docType: true }
   ),
-  (c) => c.render(<Client />)
+  (c) => c.render(<Counter />)
 );
 
 export default app;

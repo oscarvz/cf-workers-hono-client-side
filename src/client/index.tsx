@@ -1,13 +1,17 @@
-import { useEffect, useState } from "hono/jsx";
+import { StrictMode } from "hono/jsx";
+import { hydrateRoot } from "hono/jsx/dom/client";
 
+import { Counter } from "./Counter";
 import "./index.css";
 
-type Environment = "static" | "dynamic";
-
-export default function Client() {
-  const [environment, setEnvironment] = useState<Environment>("static");
-
-  useEffect(() => setEnvironment("dynamic"), []);
-
-  return <h1>This is {environment} awyis</h1>;
+const root = document.getElementById("root");
+if (!root) {
+  throw new Error("Root element not found");
 }
+
+hydrateRoot(
+  root,
+  <StrictMode>
+    <Counter />
+  </StrictMode>
+);
