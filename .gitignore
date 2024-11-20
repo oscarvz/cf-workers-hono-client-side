@@ -1,6 +1,10 @@
 # prod
 dist/
 
+# prod assets build
+public/assets
+public/.vite
+
 # dev
 .yarn/
 !.yarn/releases

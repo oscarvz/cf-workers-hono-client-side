@@ -21,6 +21,9 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20241022.0
         version: 4.20241112.0
+      '@hono/vite-build':
+        specifier: ^1.1.0
+        version: 1.1.0(hono@4.6.10)
       '@hono/vite-dev-server':
         specifier: ^0.17.0
         version: 0.17.0(hono@4.6.10)(miniflare@3.20241106.0)(wrangler@3.87.0(@cloudflare/workers-types@4.20241112.0))
@@ -417,6 +420,12 @@ packages:
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
+
+  '@hono/vite-build@1.1.0':
+    resolution: {integrity: sha512-I5FZGZq1aYw+4KA4Ff4MD6xGmZAaldJNB0Gg89RTEYBz1EJdA0WMZtr9IftB93/oyWizOXX8Q9tHVXAUFxeRaQ==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: '*'
 
   '@hono/vite-dev-server@0.17.0':
     resolution: {integrity: sha512-EvGOIj1MoY9uV94onXXz88yWaTxzUK+Mv8LiIEsR/9eSFoVUnHVR0B7l7iNIsxfHYRN7tbPDMWBSnD2RQun3yw==}
@@ -1047,6 +1056,10 @@ snapshots:
   '@fastify/busboy@2.1.1': {}
 
   '@hono/node-server@1.13.7(hono@4.6.10)':
+    dependencies:
+      hono: 4.6.10
+
+  '@hono/vite-build@1.1.0(hono@4.6.10)':
     dependencies:
       hono: 4.6.10
 

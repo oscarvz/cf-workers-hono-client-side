@@ -1,8 +1,8 @@
 name = "bindings"
-main = "src/index.tsx"
+main = "dist/index.js"
 compatibility_date = "2024-11-19"
 
-assets = { directory = "./public/", binding = "ASSETS" }
+assets = { directory = "./public/" }
 
 # compatibility_flags = [ "nodejs_compat" ]
 
