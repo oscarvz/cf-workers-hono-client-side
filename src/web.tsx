@@ -5,9 +5,9 @@ import { jsxRenderer } from "hono/jsx-renderer";
 import { Counter } from "./client/Counter";
 import { getAssetImportTagsFromManifest } from "./utils";
 
-const app = new Hono();
+const web = new Hono();
 
-app.use(
+web.use(
 	"/",
 	jsxRenderer(
 		({ children }) => {
@@ -16,6 +16,11 @@ app.use(
 			return (
 				<html lang="en">
 					<head>
+						<meta charSet="utf-8" />
+						<meta
+							content="width=device-width, initial-scale=1"
+							name="viewport"
+						/>
 						<title>Wow cf-workers-hono-client-side</title>
 						<link rel="icon" href="/favicon.svg" />
 						<Style />
@@ -32,6 +37,6 @@ app.use(
 	),
 );
 
-app.get("/", (c) => c.render(<Counter />));
+web.get("/", (c) => c.render(<Counter />));
 
-export default app;
+export default web;

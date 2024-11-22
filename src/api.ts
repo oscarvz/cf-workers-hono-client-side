@@ -1,8 +1,12 @@
 import { Hono } from "hono";
 
-const app = new Hono();
+const api = new Hono().get("/", (c) => {
+	return c.json({
+		message:
+			"Hello from the APIIIIIIHHHIII, I must've called a thousand tiiiiiiiiihhiiimes",
+	});
+});
 
-app.get("/", (c) => c.json({ message: "Hello, World!" }));
+export type Api = typeof api;
 
-export default app;
-export type Api = typeof app;
+export default api;

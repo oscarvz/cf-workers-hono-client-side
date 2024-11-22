@@ -22,8 +22,7 @@ export default defineConfig(({ mode }) => {
 		};
 	}
 
-	const entry = "./src/index.tsx";
-
+	const entry = "./src/index.ts";
 	return {
 		server: { port: 8787 },
 		plugins: [
