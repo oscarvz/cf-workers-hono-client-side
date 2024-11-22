@@ -39,16 +39,18 @@ web.use(
 // In the SSR example, we provide the root element, which contains the Counter
 // component. Counter gets rendered on the server and then hydrated on the
 // client.
-web.get("/", (c) =>
-	c.render(
+web.get("/", (c) => {
+	return c.render(
 		<div id="ssr-root" data-root>
 			<Counter />
 		</div>,
-	),
-);
+	);
+});
 
 // In the SPA example, we provide the root element, which will be used to render
 // the Counter component on the client.
-web.get("/spa", (c) => c.render(<div id="spa-root" data-root />));
+web.get("/spa", (c) => {
+	return c.render(<div id="spa-root" data-root />);
+});
 
 export default web;
