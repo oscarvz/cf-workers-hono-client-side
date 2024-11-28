@@ -1,23 +1,22 @@
 {
-	"name": "cf-workers-hono-client-side",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build --mode client && vite build",
-		"preview": "vite preview",
-		"deploy": "pnpm run build && wrangler deploy --no-bundle",
-		"lint": "biome lint",
-		"format": "biome format --write"
-	},
-	"dependencies": {
-		"hono": "^4.6.10",
-		"vite": "^5.4.11"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@cloudflare/workers-types": "^4.20241022.0",
-		"@hono/vite-build": "^1.1.0",
-		"@hono/vite-dev-server": "^0.17.0",
-		"wrangler": "^3.83.0"
-	},
-	"type": "module"
+  "name": "cf-workers-hono-client-side",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build --mode client && vite build",
+    "deploy": "pnpm run build && wrangler deploy --no-bundle",
+    "lint": "biome lint",
+    "format": "biome format --write"
+  },
+  "dependencies": {
+    "hono": "^4.6.10",
+    "vite": "^5.4.11"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@hono/vite-build": "^1.1.0",
+    "@hono/vite-dev-server": "^0.17.0",
+    "wrangler": "^3.83.0"
+  },
+  "type": "module"
 }

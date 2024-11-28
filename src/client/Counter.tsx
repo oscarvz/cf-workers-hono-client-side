@@ -7,38 +7,38 @@ import type { Api } from "../api";
 const client = hc<Api>("/api");
 
 export function Counter() {
-	const [count, setCount] = useState(0);
-	const [message, setMessage] = useState<string>();
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState<string>();
 
-	const getScore = async () => {
-		try {
-			const res = await client.index.$get();
-			const { message } = await res.json();
-			setMessage(message);
-		} catch (error) {
-			console.error("Error fetching message", error);
-		}
-	};
+  const getScore = async () => {
+    try {
+      const res = await client.index.$get();
+      const { message } = await res.json();
+      setMessage(message);
+    } catch (error) {
+      console.error("Error fetching message", error);
+    }
+  };
 
-	return (
-		<section class={sectionClass}>
-			<div content-grid>
-				<div>
-					<button type="button" onClick={() => setCount((c) => c + 1)}>
-						Increase count
-					</button>
-					<span>Count: {count}</span>
-				</div>
+  return (
+    <section class={sectionClass}>
+      <div content-grid>
+        <div>
+          <button type="button" onClick={() => setCount((c) => c + 1)}>
+            Increase count
+          </button>
+          <span>Count: {count}</span>
+        </div>
 
-				<div>
-					<button type="button" onClick={getScore}>
-						Fetch message
-					</button>
-					<span>{message}</span>
-				</div>
-			</div>
-		</section>
-	);
+        <div>
+          <button type="button" onClick={getScore} disabled={!!message}>
+            Fetch message
+          </button>
+          <span>{message}</span>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 const sectionClass = css`

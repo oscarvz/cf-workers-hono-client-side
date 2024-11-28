@@ -6,20 +6,20 @@ import "./index.css";
 
 const ssrRoot = document.getElementById("ssr-root");
 if (ssrRoot) {
-	hydrateRoot(
-		ssrRoot,
-		<StrictMode>
-			<Counter />
-		</StrictMode>,
-	);
+  hydrateRoot(
+    ssrRoot,
+    <StrictMode>
+      <Counter />
+    </StrictMode>,
+  );
 }
 
 const spaRoot = document.getElementById("spa-root");
 if (spaRoot) {
-	const root = createRoot(spaRoot);
-	root.render(
-		<StrictMode>
-			<Counter />
-		</StrictMode>,
-	);
+  const root = createRoot(spaRoot);
+  root.render(
+    <StrictMode>
+      <Counter />
+    </StrictMode>,
+  );
 }

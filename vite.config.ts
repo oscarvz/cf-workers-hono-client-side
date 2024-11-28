@@ -4,30 +4,30 @@ import cloudflareAdapter from "@hono/vite-dev-server/cloudflare";
 import { defineConfig } from "vite";
 
 export default defineConfig(({ mode }) => {
-	if (mode === "client") {
-		return {
-			build: {
-				rollupOptions: {
-					input: "./src/client/index.tsx",
-					output: {
-						entryFileNames: "assets/[name]-[hash].js",
-					},
-				},
-				outDir: "./public",
-				copyPublicDir: true,
-				emptyOutDir: true,
-				manifest: true,
-			},
-			publicDir: "./src/public",
-		};
-	}
+  if (mode === "client") {
+    return {
+      build: {
+        rollupOptions: {
+          input: "./src/client/index.tsx",
+          output: {
+            entryFileNames: "assets/[name]-[hash].js",
+          },
+        },
+        outDir: "./public",
+        copyPublicDir: true,
+        emptyOutDir: true,
+        manifest: true,
+      },
+      publicDir: "./src/public",
+    };
+  }
 
-	const entry = "./src/index.ts";
-	return {
-		server: { port: 8787 },
-		plugins: [
-			devServer({ adapter: cloudflareAdapter, entry }),
-			build({ entry }),
-		],
-	};
+  const entry = "./src/index.ts";
+  return {
+    server: { port: 8787 },
+    plugins: [
+      devServer({ adapter: cloudflareAdapter, entry }),
+      build({ entry }),
+    ],
+  };
 });
